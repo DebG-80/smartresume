@@ -1,9 +1,9 @@
-# Arhitecture
-![Design](images/ChatGPT_Image_Architecture.png)
+# Arhitecture Design
+!(images/ChatGPT_Image_Architecture.png)
 
 ## Typical work flow
 
-1. User sends an HTTP POST request to the / smartresume API endpoint, specifying the job parameters in the request body.
+1. User sends an HTTP POST request to the '/' of smartresume API endpoint, specifying the job parameters in the request body.
 
 2. The smartresume API, which is an API Gateway REST API, returns an HTTP response that contains the request Id identifier. This identifier will act as the session id w.r.t. the particular ..
 
@@ -13,11 +13,11 @@
 
 5. User sends an HTTP GET request to the /final API endpoint, with the session id from step 2.
 
-6. The /final API queries the smartresume DynamoDB table to retrieve the S3 URL.
+6. This request is synchronous, hence it invokes lambda function in the same flow. It queries the smartresume DynamoDB table to retrieve the S3 URL. 
 
-7. The /final API returns the file URL of the generated PDF.
+7. The Lambda function fetches the S3 file URL based on the session id from dynamodb table. Then file itself is then fetched fromo S3 and written as HTTP response.
 
-8. User would access the PDF file using the URL. 
+8. The /final API endpoint returns an HTTP response that contains the requested file. 
 
 9. If the event processing fails, it is sent to the error-handling lambda function.
 
