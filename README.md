@@ -25,7 +25,7 @@
 
 # Built with
 
-* [![Lambda](https://images.app.goo.gl/mw5MLWo8zF1WrPWH9)]
+* [![Lambda](images/Aws-Lambda.png)]
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
