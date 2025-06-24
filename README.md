@@ -30,4 +30,5 @@
 * AWS DynamoDB ![AWS DynamoDB](images/Aws-Dynamodb.png)
 * AWS S3 ![AWS S3](images/Aws-S3.png)
 * AWS Lambda ![AWS Lambda](images/Aws-Lambda.png)
-* OpenAI
+* Python ![AWS Lambda](images/Python.png)
+* OpenAI ![AWS Lambda](images/Openai.png)
