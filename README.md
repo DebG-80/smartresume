@@ -1,5 +1,5 @@
 # Arhitecture
-![]
+![images/ChatGPT Image Jun 24, 2025, 01_00_01 PM.png]
 
 ## Typical work flow
 
