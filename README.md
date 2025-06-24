@@ -25,9 +25,9 @@
 
 # Built with
 
-* [![Lambda](images/Aws-Lambda.png)]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
+* AWS API Gateway ![AWS API Gateway](images/Aws-Api-Gateway.png)
+* AWS Cloudfront ![AWS Cloudfront](images/Aws-Cloudfront.png)
+* AWS DynamoDB ![AWS DynamoDB](images/Aws-Dynamodb.png)
+* AWS S3 ![AWS S3](images/Aws-S3.png)
+* AWS Lambda ![AWS Lambda](images/Aws-Lambda.png)
+* OpenAI
