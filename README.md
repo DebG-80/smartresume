@@ -1,7 +1,7 @@
 # Arhitecture Design
 ![Design](images/ChatGPT_Image_Architecture.png)
 
-## Typical work flow
+# Typical work flow
 
 1. User sends an HTTP POST request to the '/' of smartresume API endpoint, specifying the job parameters in the request body.
 
@@ -22,3 +22,12 @@
 9. If the event processing fails, it is sent to the error-handling lambda function.
 
 10. The error-handling function puts the session id in the smartresume DynamoDB table along with relevant message.
+
+# Built with
+
+* [![Lambda](https://images.app.goo.gl/mw5MLWo8zF1WrPWH9)]
+* [![React][React.js]][React-url]
+* [![Vue][Vue.js]][Vue-url]
+* [![Angular][Angular.io]][Angular-url]
+* [![Svelte][Svelte.dev]][Svelte-url]
+* [![Laravel][Laravel.com]][Laravel-url]
