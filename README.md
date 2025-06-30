@@ -3,7 +3,7 @@
 
 # Typical work flow
 
-1. User sends an HTTP POST request to the '/' of smartresume API endpoint, specifying the job parameters in the request body. 
+1. User sends an HTTP POST request to the '/' of smartresume API endpoint, specifying the required information in the request body. 
 
 2. The smartresume API, which is an API Gateway REST API, returns an HTTP response to the user that contains the request Id identifier. This identifier will act as the session id w.r.t. the particular communication series with the user & application.
 
