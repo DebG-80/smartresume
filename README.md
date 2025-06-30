@@ -3,25 +3,16 @@
 
 # Typical work flow
 
-1. User sends an HTTP POST request to the '/' of smartresume API endpoint, specifying the required information in the request body. 
-
-2. The smartresume API, which is an API Gateway REST API, returns an HTTP response to the user that contains the request Id identifier. This identifier will act as the session id w.r.t. the particular communication series with the user & application.
-
-3. The smartresume API invokes asynchronously the event-processing Lambda function. 
-
-4. The event-processing smartresume Lambda function processes the event by invoking an OPENAI API, writes the response into a PDF file & uploads the same in S3 smartresume bucket and saves the corresponding URL in smartresume Amazon DynamoDB table against the session id from step 2 as the key. 
-
-5. User sends an HTTP GET request to the /final API endpoint, with the session id from step 2. 
-
-6. This request is synchronous, hence it invokes the smartresume lambda function in the same flow. It queries the smartresume DynamoDB table to retrieve the S3 URL. 
-
-7. The smartresume Lambda function then fetches the file itself from S3, which is then written as HTTP response. 
-
-8. The /final API endpoint returns an HTTP response that contains the requested file. 
-
+1. Landing page of the website is hosted on S3, but it can only be accessed through Cloudfront URL for HTTP to HTTPS redirection.
+2. User sends an HTTP POST request to the '/' of smartresume API endpoint, specifying the required information in the request body.
+3. The smartresume API, which is an API Gateway REST API, returns an HTTP response to the user that contains the request Id identifier. This identifier will act as the session id w.r.t. the particular communication series with the user & application.
+4. The smartresume API invokes asynchronously the event-processing Lambda function. 
+5. The event-processing Lambda function processes the event by invoking an OPENAI API, writes the response into a HTML file & uploads the same in S3. Key in S3 is the session Id shared with the user in second step.
+6. User sends a HTTP GET request to the /final API endpoint for requesting the final output, with the session id from step 2. 
+7. This request is synchronous, hence it invokes the event-processing lambda function in the same flow. It checks if the file has been created in S3. It will return the hyperlink of the file if generarated, otherwise a suitable message.
+8. The /final API endpoint returns the HTTP response to the user. 
 9. If the smartresume lambda function somehow fails, it is sent to the error-handling smartresumeError lambda function. 
-
-10. The smartresumeError lambda function puts the session id in the same smartresume DynamoDB table 4 along with any relevant message.
+10. The smartresumeError lambda function puts the session id in the same smartresume DynamoDB table along with any relevant message.
 
 # Built with
 
