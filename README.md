@@ -3,7 +3,7 @@
 
 # Typical work flow
 
-1. Landing page of the website is hosted on S3, but it can only be accessed through Cloudfront URL for HTTP to HTTPS redirection. This is only for accessing the first page, hence not represnted in the Architecture diagram. 
+1. Landing page of the website is hosted on S3, but it can only be accessed through Cloudfront URL for HTTP to HTTPS redirection. This is only for accessing the first page, hence represnted outside the main AWS block. 
 2. User sends an HTTP POST request to the '/' of jobs API endpoint, specifying the required information in the request body.
 3. The smartresume API, which is an API Gateway REST API, returns an HTTP response to the user that contains the request Id identifier. This identifier will act as the session id w.r.t. the particular communication series with the user & application.
 4. The smartresume API invokes asynchronously the event-processing Lambda function. 
