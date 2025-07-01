@@ -1,5 +1,5 @@
 # Arhitecture Design
-![Design](images/ChatGP_Image_Architecture.png)
+![Design](images/ChatGPT_Image_Architecture.png)
 
 # Typical work flow
 
